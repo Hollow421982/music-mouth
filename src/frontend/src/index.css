@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Dark neon music-tech palette */
+    --background: 0.11 0.012 240;
+    --foreground: 0.96 0.005 240;
+    --card: 0.15 0.015 240;
+    --card-foreground: 0.96 0.005 240;
+    --popover: 0.18 0.018 240;
+    --popover-foreground: 0.96 0.005 240;
+    --primary: 0.79 0.16 192;
+    --primary-foreground: 0.08 0.01 240;
+    --secondary: 0.18 0.018 240;
+    --secondary-foreground: 0.96 0.005 240;
+    --muted: 0.19 0.015 240;
+    --muted-foreground: 0.72 0.015 240;
+    --accent: 0.79 0.16 192;
+    --accent-foreground: 0.08 0.01 240;
+    --destructive: 0.67 0.22 15;
+    --destructive-foreground: 0.96 0.005 240;
+    --border: 0.28 0.02 240;
+    --input: 0.22 0.018 240;
+    --ring: 0.79 0.16 192;
+    --chart-1: 0.88 0.14 200;
+    --chart-2: 0.72 0.2 300;
+    --chart-3: 0.78 0.22 340;
+    --chart-4: 0.85 0.18 75;
+    --chart-5: 0.79 0.16 192;
+    --sidebar: 0.13 0.012 240;
+    --sidebar-foreground: 0.96 0.005 240;
+    --sidebar-primary: 0.79 0.16 192;
+    --sidebar-primary-foreground: 0.08 0.01 240;
+    --sidebar-accent: 0.18 0.018 240;
+    --sidebar-accent-foreground: 0.96 0.005 240;
+    --sidebar-border: 0.28 0.02 240;
+    --sidebar-ring: 0.79 0.16 192;
+    /* Custom brand tokens */
+    --neon-teal: 0.79 0.16 192;
+    --neon-pink: 0.67 0.22 15;
+    --neon-cyan: 0.88 0.14 200;
+    --neon-purple: 0.72 0.2 300;
+    --neon-magenta: 0.78 0.22 340;
+    --neon-yellow: 0.85 0.18 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .glow-teal {
+    box-shadow: 0 0 20px oklch(0.79 0.16 192 / 0.4), 0 0 40px
+      oklch(0.79 0.16 192 / 0.2);
+  }
+  .glow-pink {
+    box-shadow: 0 0 20px oklch(0.67 0.22 15 / 0.6), 0 0 40px
+      oklch(0.67 0.22 15 / 0.3), 0 0 80px oklch(0.67 0.22 15 / 0.15);
+  }
+  .glow-cyan {
+    box-shadow: 0 0 15px oklch(0.88 0.14 200 / 0.5), 0 0 30px
+      oklch(0.88 0.14 200 / 0.25);
+  }
+  .text-neon-teal {
+    color: oklch(var(--neon-teal));
+  }
+  .text-neon-pink {
+    color: oklch(var(--neon-pink));
+  }
+  .text-neon-cyan {
+    color: oklch(var(--neon-cyan));
+  }
+  .text-neon-purple {
+    color: oklch(var(--neon-purple));
+  }
+  .text-neon-yellow {
+    color: oklch(var(--neon-yellow));
+  }
+  .bg-neon-teal {
+    background-color: oklch(var(--neon-teal));
+  }
+  .bg-neon-pink {
+    background-color: oklch(var(--neon-pink));
+  }
+  .border-neon-teal {
+    border-color: oklch(var(--neon-teal));
+  }
+  .border-neon-pink {
+    border-color: oklch(var(--neon-pink));
+  }
+  .waveform-gradient {
+    background: linear-gradient(
+      90deg,
+      oklch(0.88 0.14 200) 0%,
+      oklch(0.72 0.2 300) 33%,
+      oklch(0.78 0.22 340) 66%,
+      oklch(0.85 0.18 75) 100%
+    );
+  }
+}
